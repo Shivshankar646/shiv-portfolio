@@ -24,12 +24,12 @@ const projects = [
     link: "https://sky-sense-eosin.vercel.app/",
   },
   {
-    title: "E-Commerce App (Coming Soon)",
+    title: "E-Commerce App",
     description: "A modern e-commerce platform in development with cart, filters, and product pages.",
-    tech: ["React", "Tailwind", "To Be Added"],
-    github: "#",
+    tech: ["React", "Context API", "Tailwind CSS", "FakeStore API"],
+    github: "https://github.com/Shivshankar646/Ecommerce-Store",
     thumbnail: ecommerceThumbnail,
-    link: "#",
+    link: "https://ecommerce-store-sooty-nine.vercel.app/",
   },
 ]
 
