@@ -31,26 +31,33 @@ const projects = [
     thumbnail: ecommerceThumbnail,
     link: "https://ecommerce-store-sooty-nine.vercel.app/",
   },
+  {
+    title: "Job Application Tracker",
+    description: "Development is going on",
+    tech: ["React","Tailwind CSS"],
+    github: "https://github.com/Shivshankar646/job-tracker",
+    link: "https://job-tracker-psi-jet.vercel.app/",
+  },
 ]
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white py-24 px-6 relative overflow-hidden"
+      className="relative min-h-screen px-6 py-24 overflow-hidden text-white bg-gradient-to-b from-slate-950 to-slate-900"
     >
-      <div className="absolute top-10 left-20 w-72 h-72 bg-sky-500/20 blur-3xl rounded-full animate-pulse"></div>
-      <div className="absolute bottom-10 right-20 w-72 h-72 bg-indigo-500/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute rounded-full top-10 left-20 w-72 h-72 bg-sky-500/20 blur-3xl animate-pulse"></div>
+      <div className="absolute rounded-full bottom-10 right-20 w-72 h-72 bg-indigo-500/20 blur-3xl animate-pulse"></div>
 
-      <h2 className="text-5xl font-bold text-center mb-16 tracking-wide">
+      <h2 className="mb-16 text-5xl font-bold tracking-wide text-center">
         🚀 Featured <span className="text-sky-400">Projects</span>
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto relative z-10">
+      <div className="relative z-10 grid gap-12 mx-auto md:grid-cols-3 max-w-7xl">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-xl hover:shadow-sky-500/30 transition-all duration-500"
+            className="p-8 transition-all duration-500 border shadow-xl bg-white/5 backdrop-blur-xl border-white/10 rounded-3xl hover:shadow-sky-500/30"
             whileHover={{
               scale: 1.05,
               rotateY: 8,
@@ -62,28 +69,28 @@ export default function Projects() {
               damping: 12,
             }}
           >
-            <img src={project.thumbnail} alt={project.title} className="w-full h-40 object-cover rounded-xl mb-4 border border-white/10"/>
-            <div className="bg-gradient-to-r from-sky-500 to-indigo-500 w-12 h-1 mb-4 rounded-full"></div>
-            <h3 className="text-2xl font-semibold mb-3 text-sky-300">{project.title}</h3>
-            <p className="text-slate-300 mb-4 leading-relaxed">{project.description}</p>
+            <img src={project.thumbnail} alt={project.title} className="object-cover w-full h-40 mb-4 border rounded-xl border-white/10"/>
+            <div className="w-12 h-1 mb-4 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+            <h3 className="mb-3 text-2xl font-semibold text-sky-300">{project.title}</h3>
+            <p className="mb-4 leading-relaxed text-slate-300">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 mt-3 mb-4">
               {/* Tech badges with icons */}
             {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-1 text-xs bg-sky-900/40 border border-sky-500/30 text-sky-200 px-3 py-1 rounded-full shadow-sm"
+                  className="flex items-center gap-1 px-3 py-1 text-xs border rounded-full shadow-sm bg-sky-900/40 border-sky-500/30 text-sky-200"
                 >
                   {/* Icon logic */}
-                  {tech.includes("React") && <i className="devicon-react-original text-sky-300 text-sm"></i>}
-                  {tech.includes("JavaScript") && <i className="devicon-javascript-plain text-yellow-300 text-sm"></i>}
-                  {tech.includes("HTML") && <i className="devicon-html5-plain text-orange-400 text-sm"></i>}
-                  {tech.includes("CSS") && <i className="devicon-css3-plain text-blue-400 text-sm"></i>}
-                  {tech.includes("Tailwind") && <i className="devicon-tailwindcss-plain text-sky-400 text-sm"></i>}
-                  {tech.includes("API") && <i className="devicon-nodejs-plain text-green-400 text-sm"></i>}
-                  {tech.includes("Vite") && <i className="devicon-vitejs-plain text-purple-400 text-sm"></i>}
-                  {tech.includes("Chart") && <i className="devicon-d3js-plain text-red-400 text-sm"></i>}
-                  {tech.includes("PWA") && <i className="devicon-chrome-plain text-blue-300 text-sm"></i>}
+                  {tech.includes("React") && <i className="text-sm devicon-react-original text-sky-300"></i>}
+                  {tech.includes("JavaScript") && <i className="text-sm text-yellow-300 devicon-javascript-plain"></i>}
+                  {tech.includes("HTML") && <i className="text-sm text-orange-400 devicon-html5-plain"></i>}
+                  {tech.includes("CSS") && <i className="text-sm text-blue-400 devicon-css3-plain"></i>}
+                  {tech.includes("Tailwind") && <i className="text-sm devicon-tailwindcss-plain text-sky-400"></i>}
+                  {tech.includes("API") && <i className="text-sm text-green-400 devicon-nodejs-plain"></i>}
+                  {tech.includes("Vite") && <i className="text-sm text-purple-400 devicon-vitejs-plain"></i>}
+                  {tech.includes("Chart") && <i className="text-sm text-red-400 devicon-d3js-plain"></i>}
+                  {tech.includes("PWA") && <i className="text-sm text-blue-300 devicon-chrome-plain"></i>}
 
                   {tech}
                 </span>
@@ -94,14 +101,14 @@ export default function Projects() {
               <a
                 href={project.link}
                 target="_blank"
-                className="px-4 py-2 text-sm rounded-lg bg-sky-600 hover:bg-sky-500 transition"
+                className="px-4 py-2 text-sm transition rounded-lg bg-sky-600 hover:bg-sky-500"
               >
                 {project.link === "#" ? "Coming Soon" : "Live Demo"}
               </a>
               <a
                 href={project.github}
                 target="_blank"
-                className="px-4 py-2 text-sm rounded-lg bg-slate-700 hover:bg-slate-600 transition"
+                className="px-4 py-2 text-sm transition rounded-lg bg-slate-700 hover:bg-slate-600"
               >
                 {project.github === "#" ? "No Repo" : "GitHub"}
               </a>
